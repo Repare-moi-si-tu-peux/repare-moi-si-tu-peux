@@ -6,6 +6,29 @@ toggle?.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', open);
 });
 
+// Sélecteur de thème (voir assets/js/theme.js), qui met aussi le thème choisi dans l'URL pour pouvoir la partager
+const footer = document.querySelector('.site-footer .wrap');
+if (footer) {
+  const picker = document.createElement('p');
+  picker.className = 'theme-picker';
+  picker.innerHTML = '<label for="theme">Thème</label><select id="theme"><option value="">Par défaut</option></select>';
+  const select = picker.querySelector('select');
+  THEME_GROUPS.forEach(([label, themes]) => {
+    const group = document.createElement('optgroup');
+    group.label = label;
+    Object.entries(themes).forEach(([value, name]) => group.append(new Option(name, value)));
+    select.append(group);
+  });
+  select.value = document.documentElement.dataset.theme ?? '';
+  select.addEventListener('change', () => {
+    const theme = setTheme(select.value);
+    const url = new URL(location.href);
+    if (theme) url.searchParams.set('theme', theme); else url.searchParams.delete('theme');
+    history.replaceState(null, '', url);
+  });
+  footer.append(picker);
+}
+
 // Visionneuse des galeries
 const links = [...document.querySelectorAll('.gallery a')];
 if (links.length) {

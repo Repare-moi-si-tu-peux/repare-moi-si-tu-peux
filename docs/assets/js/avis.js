@@ -1,6 +1,6 @@
 // Page "Avis" : envoie les avis vers le Google Sheet du site et affiche les avis validés.
 // Adresse du script Google (voir apps-script/avis.gs) :
-const AVIS_URL = 'https://script.google.com/macros/s/AKfycbwnU60iQ2PORdCNu0AzICm0iGr5vxuiOpDdUZgrG9Zo7UlXA33pS4_KDV7JUf0zucVw/exec';
+const AVIS_URL = 'https://script.google.com/macros/s/AKfycbwKR41B49JWGMjLXd4-8qUVyTszJ-JahV-q43D12wVHggWNmdbv2Mh7xtfwWiBcKMy1/exec';
 
 const form = document.getElementById('avis-form');
 const noteMsg = document.getElementById('avis-note');

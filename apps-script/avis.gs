@@ -8,11 +8,16 @@
  */
 
 const NOTIFY_EMAIL = 'ReparemoiSTP@gmail.com'; // reçoit un mail à chaque nouvel avis à valider
+const SPREADSHEET_ID = '1RoczVi3T9XQxHYdNq6Vu_Cq63ehnYgAupsHrlzseGgg'; // le tableau où sont rangés les avis
 const SHEET_NAME = 'Avis';
 const HEADERS = ['Date', 'Note', 'Prénom', 'Travaux', 'Commentaire', 'Publié'];
 
+function getSpreadsheet_() {
+  return SpreadsheetApp.openById(SPREADSHEET_ID);
+}
+
 function getSheet_() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
   let sh = ss.getSheetByName(SHEET_NAME);
   if (!sh) sh = ss.insertSheet(SHEET_NAME);
   if (sh.getLastRow() === 0) {
@@ -80,7 +85,7 @@ function doPost(e) {
         'Nouvel avis client à valider (' + note + '/5)',
         nom + ' a laissé un avis :\n\n' + commentaire +
         '\n\nPour le publier, cochez la case « Publié » dans le tableau :\n' +
-        SpreadsheetApp.getActiveSpreadsheet().getUrl()
+        getSpreadsheet_().getUrl()
       );
     } catch (mailErr) {
       // Le mail est facultatif : l'avis est déjà enregistré.

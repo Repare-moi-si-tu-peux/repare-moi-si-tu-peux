@@ -44,7 +44,7 @@
   <p>Vous avez fait appel à « Répare moi si tu peux » ? Votre retour m'aide à m'améliorer et à rassurer les futurs clients. Donnez une note et dites-moi en quelques mots comment s'est passée l'intervention.</p>
 </div>
 
-<form id="avis-form" class="avis-form" action="mailto:ReparemoiSTP@gmail.com" method="post" enctype="text/plain">
+<form id="avis-form" class="avis-form">
   <fieldset class="stars">
     <legend>Votre note</legend>
     <div class="stars-row">
@@ -77,9 +77,20 @@
     <textarea id="commentaire" name="commentaire" rows="6" required></textarea>
   </p>
 
+  <p class="hp" aria-hidden="true">
+    <label for="site">Ne pas remplir ce champ</label>
+    <input type="text" id="site" name="site" tabindex="-1" autocomplete="off">
+  </p>
+
   <p class="cta"><button type="submit" class="button">Envoyer mon avis</button></p>
-  <p class="form-note" id="avis-note">En cliquant sur « Envoyer mon avis », votre application de messagerie s'ouvre avec votre message déjà rédigé : il ne vous reste qu'à l'envoyer.</p>
+  <p class="form-note" id="avis-note" role="status">En cliquant sur « Envoyer mon avis », votre avis est transmis et sera affiché sur cette page après validation.</p>
 </form>
+
+<section class="avis-section" aria-labelledby="avis-titre">
+  <h2 id="avis-titre">Avis des clients</h2>
+  <p class="avis-resume" id="avis-resume"></p>
+  <div id="avis-liste" class="avis-liste"><p class="form-note">Chargement des avis…</p></div>
+</section>
 
   </main>
 

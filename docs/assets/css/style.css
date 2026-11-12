@@ -247,3 +247,20 @@ figure.float-left { float: left; width: min(16rem, 40%); margin: 0 1.5rem 1rem 0
 .stars-row label:hover, .stars-row label:hover ~ label,
 .stars-row input:checked ~ label { color: var(--accent); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Avis affichés sur la page */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.avis-section { max-width: 40rem; margin: 2.5rem 0 1rem; }
+.avis-resume { color: var(--muted); font-weight: 600; margin: 0 0 1rem; }
+.avis-liste { display: grid; gap: 1rem; }
+.avis-carte {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+}
+.avis-carte p { margin: 0; }
+.avis-tete { margin-bottom: .2rem; }
+.avis-etoiles { color: var(--accent); font-size: 1.2rem; letter-spacing: .05em; }
+.avis-infos { color: var(--muted); font-size: .9rem; margin-bottom: .5rem; }
+.avis-texte { white-space: pre-line; overflow-wrap: anywhere; }

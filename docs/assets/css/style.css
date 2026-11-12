@@ -219,3 +219,31 @@ figure.float-left { float: left; width: min(16rem, 40%); margin: 0 1.5rem 1rem 0
 @media (max-width: 36rem) {
   figure.float-left { float: none; width: 60%; margin: 1rem auto; }
 }
+
+/* Page Avis */
+.avis-form { max-width: 40rem; margin: 1.5rem 0; }
+.avis-form label { display: block; font-weight: 600; margin-bottom: .3rem; }
+.avis-form input[type="text"], .avis-form select, .avis-form textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .65rem .8rem;
+}
+.avis-form input:focus-visible, .avis-form select:focus-visible, .avis-form textarea:focus-visible,
+.stars input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 2px; }
+.avis-form button.button { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.form-note { color: var(--muted); font-size: .95rem; }
+.stars { border: 0; padding: 0; margin: 0 0 1rem; }
+.stars legend { font-weight: 600; padding: 0; margin-bottom: .3rem; }
+.stars-row { display: inline-flex; flex-direction: row-reverse; justify-content: flex-end; }
+.stars-row input { position: absolute; opacity: 0; pointer-events: none; }
+.stars-row label {
+  font-size: 2.4rem; line-height: 1; padding: 0 .1rem; margin: 0;
+  color: var(--line); cursor: pointer; font-weight: 400;
+}
+.stars-row label:hover, .stars-row label:hover ~ label,
+.stars-row input:checked ~ label { color: var(--accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

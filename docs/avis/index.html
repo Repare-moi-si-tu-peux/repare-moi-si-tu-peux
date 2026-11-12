@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Votre avis</title>
+  <meta name="description" content="Réparation et bricolage : maison, jardin, meubles.">
+  <meta property="og:title" content="Votre avis">
+  <meta property="og:description" content="Réparation et bricolage : maison, jardin, meubles.">
+  <meta property="og:site_name" content="Répare moi si tu peux">
+  <meta property="og:image" content="https://www.reparemoisitupeux.fr/images/logo.webp">
+  <link rel="icon" href="../images/logo.webp">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/avis.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="../images/logo.webp" alt="" width="40" height="40">Répare moi si tu peux</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav id="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/a-propos/">À propos</a></li>
+          <li><a href="/partenaires/">Partenaires</a></li>
+          <li><a href="/galerie-photo/">Habitation</a></li>
+          <li><a href="/galerie-photo-meubles/">Meubles</a></li>
+          <li><a href="/galerie-photo-jardinage/">Jardinage</a></li>
+          <li><a href="/avis/" aria-current="page">Avis</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <main class="wrap">
+<div class="prose">
+  <h1>Votre avis</h1>
+  <p>Vous avez fait appel à « Répare moi si tu peux » ? Votre retour m'aide à m'améliorer et à rassurer les futurs clients. Donnez une note et dites-moi en quelques mots comment s'est passée l'intervention.</p>
+</div>
+
+<form id="avis-form" class="avis-form" action="mailto:ReparemoiSTP@gmail.com" method="post" enctype="text/plain">
+  <fieldset class="stars">
+    <legend>Votre note</legend>
+    <div class="stars-row">
+      <input type="radio" name="note" id="note5" value="5" required><label for="note5" title="5 sur 5">★<span class="sr-only">5 étoiles</span></label>
+      <input type="radio" name="note" id="note4" value="4"><label for="note4" title="4 sur 5">★<span class="sr-only">4 étoiles</span></label>
+      <input type="radio" name="note" id="note3" value="3"><label for="note3" title="3 sur 5">★<span class="sr-only">3 étoiles</span></label>
+      <input type="radio" name="note" id="note2" value="2"><label for="note2" title="2 sur 5">★<span class="sr-only">2 étoiles</span></label>
+      <input type="radio" name="note" id="note1" value="1"><label for="note1" title="1 sur 5">★<span class="sr-only">1 étoile</span></label>
+    </div>
+  </fieldset>
+
+  <p>
+    <label for="nom">Votre prénom (ou prénom et initiale du nom)</label>
+    <input type="text" id="nom" name="nom" autocomplete="given-name" required>
+  </p>
+
+  <p>
+    <label for="travaux">Type de travaux réalisés</label>
+    <select id="travaux" name="travaux">
+      <option value="">— Choisir —</option>
+      <option>Petites réparations de la maison</option>
+      <option>Montage ou création de meubles</option>
+      <option>Jardinage</option>
+      <option>Autre</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="commentaire">Votre commentaire</label>
+    <textarea id="commentaire" name="commentaire" rows="6" required></textarea>
+  </p>
+
+  <p class="cta"><button type="submit" class="button">Envoyer mon avis</button></p>
+  <p class="form-note" id="avis-note">En cliquant sur « Envoyer mon avis », votre application de messagerie s'ouvre avec votre message déjà rédigé : il ne vous reste qu'à l'envoyer.</p>
+</form>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Répare moi si tu peux</strong> · 20 avenue de Montlouis, 69410 Champagne-au-Mont-d'Or</p>
+      <p><a href="tel:+33601417177">06 01 41 71 77</a> · <a href="mailto:ReparemoiSTP@gmail.com">ReparemoiSTP@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

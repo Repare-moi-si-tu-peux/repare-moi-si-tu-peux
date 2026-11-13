@@ -46,14 +46,27 @@ function afficherAvis(avis) {
   }
 }
 
+// Avis reçus avant la mise en place du tableau Google : toujours affichés, en plus de ceux du tableau.
+const AVIS_FIXES = [
+  {
+    date: '2026-11-13',
+    note: 5,
+    nom: 'Steevan',
+    travaux: 'Petites réparations de la maison',
+    commentaire: "David est arrivé à l'heure, a très bien travaillé, et a un bon contact client.\n\nJe recommande !"
+  }
+];
+
 async function chargerAvis() {
   if (!liste) return;
   try {
     const res = await fetch(AVIS_URL);
     const data = await res.json();
-    afficherAvis(Array.isArray(data.avis) ? data.avis : []);
+    const recus = Array.isArray(data.avis) ? data.avis : [];
+    afficherAvis([...recus, ...AVIS_FIXES]);
   } catch (err) {
-    liste.replaceChildren(el('p', 'form-note', 'Les avis ne peuvent pas être affichés pour le moment.'));
+    // Le tableau ne répond pas : on affiche au moins les avis déjà connus.
+    afficherAvis(AVIS_FIXES);
   }
 }
 
